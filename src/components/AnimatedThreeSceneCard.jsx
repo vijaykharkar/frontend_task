@@ -44,7 +44,12 @@ const AnimatedThreeSceneCard = () => {
   }, [handleScroll]);
 
   const renderDropdowns = () => (
-    <Card
+    <motion.div
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={fadeVariants}
+      transition={{ duration: 0.5 }}
       style={{
         padding: 15,
         borderRadius: 20,
@@ -107,7 +112,7 @@ const AnimatedThreeSceneCard = () => {
           <MenuItem value="multi">Multi GPU</MenuItem>
         </Select>
       </FormControl>
-    </Card>
+    </motion.div>
   );
 
   const getBackground = () => {
